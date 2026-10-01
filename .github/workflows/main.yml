@@ -1,4 +1,4 @@
-name: Substituir Logo do Bizagi
+name: Substituir Logo do Bizagi e Ajustar Responsividade do Painel CSS
 
 on:
   push:
@@ -27,3 +27,8 @@ jobs:
         with:
           folder: .
           branch: gh-pages
+
+      - name: Ajuste de responsividade do painel CSS
+        run: |
+          sed -i '/\.active #updatePanelDiagram {/a\    position: fixed;' libs/css/app.css
+          sed -i '/\[class\*="column"\] + \[class\*="column"\]:last-child {/,/}/d' libs/css/app.css
