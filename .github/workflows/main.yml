@@ -3,7 +3,10 @@ name: Substituir Logo do Bizagi
 on:
   push:
     branches:
-      - main  # Executa sempre que você enviar arquivos para a branch main
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -14,14 +17,13 @@ jobs:
 
       - name: Substituir logos do Bizagi pelo personalizado
         run: |
-          # Substitui o logo padrão
-          cp custom-assets/Logo_IFC_horizontal.png libs/img/biz-ex-logo.png
-          
-          # Substitui o logo de alta resolução (2x)
-          cp custom-assets/Logo_IFC_horizontal.png libs/img/biz-ex-logo-2x.png
+          ls -la custom-assets lib/img   # ajuda a depurar caminhos
+          cp custom-assets/Logo_IFC_horizontal.png lib/img/biz-ex-logo.png
+          cp custom-assets/Logo_IFC_horizontal.png lib/img/biz-ex-logo-2x.png
+          touch .nojekyll
 
-      - name: Publicar no GitHub Pages atualizado
+      - name: Publicar no GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: .        # Pasta raiz onde estão os arquivos
-          branch: gh-pages # Branch que o GitHub Pages vai ler para exibir o site
+          folder: .
+          branch: gh-pages
