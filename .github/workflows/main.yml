@@ -15,10 +15,10 @@ jobs:
       - name: Substituir logos do Bizagi pelo personalizado
         run: |
           # Substitui o logo padrão
-          cp custom-assets/Logo_IFC_horizontal.png lib/img/biz-ex-logo.png
+          cp custom-assets/Logo_IFC_horizontal.png libs/img/biz-ex-logo.png
           
           # Substitui o logo de alta resolução (2x)
-          cp custom-assets/Logo_IFC_horizontal.png lib/img/biz-ex-logo-2x.png
+          cp custom-assets/Logo_IFC_horizontal.png libs/img/biz-ex-logo-2x.png
 
       - name: Publicar no GitHub Pages atualizado
         uses: JamesIves/github-pages-deploy-action@v4
