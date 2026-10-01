@@ -19,7 +19,7 @@ jobs:
         run: |
           ls -la custom-assets libs/img   # ajuda a depurar caminhos
           cp custom-assets/Logo_IFC_horizontal.png libs/img/biz-ex-logo.png
-          cp custom-assets/Logo_IFC_horizontal.png libs/img/biz-ex-logo-2x.png
+          cp custom-assets/Logo_IFC_horizontal_2x.png libs/img/biz-ex-logo-2x.png
           touch .nojekyll
 
       - name: Publicar no GitHub Pages
