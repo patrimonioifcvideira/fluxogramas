@@ -17,9 +17,9 @@ jobs:
 
       - name: Substituir logos do Bizagi pelo personalizado
         run: |
-          ls -la custom-assets lib/img   # ajuda a depurar caminhos
-          cp custom-assets/Logo_IFC_horizontal.png lib/img/biz-ex-logo.png
-          cp custom-assets/Logo_IFC_horizontal.png lib/img/biz-ex-logo-2x.png
+          ls -la custom-assets libs/img   # ajuda a depurar caminhos
+          cp custom-assets/Logo_IFC_horizontal.png libs/img/biz-ex-logo.png
+          cp custom-assets/Logo_IFC_horizontal.png libs/img/biz-ex-logo-2x.png
           touch .nojekyll
 
       - name: Publicar no GitHub Pages
