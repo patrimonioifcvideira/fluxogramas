@@ -22,13 +22,14 @@ jobs:
           cp custom-assets/Logo_IFC_horizontal_2x.png libs/img/biz-ex-logo-2x.png
           touch .nojekyll
 
+      - name: Ajuste de responsividade do painel CSS
+        run: |
+          sed -i '/\.active #updatePanelDiagram {/a\    position: fixed;' libs/css/app.css
+          sed -i '/\[class\*="column"\] + \[class\*="column"\]:last-child {/,/}/d' libs/css/app.css          
+
       - name: Publicar no GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: .
           branch: gh-pages
 
-      - name: Ajuste de responsividade do painel CSS
-        run: |
-          sed -i '/\.active #updatePanelDiagram {/a\    position: fixed;' libs/css/app.css
-          sed -i '/\[class\*="column"\] + \[class\*="column"\]:last-child {/,/}/d' libs/css/app.css
