@@ -765,9 +765,6 @@ select {
   }
 
   /* line 147, ../../../../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/zurb-foundation-4.3.2/scss/foundation/components/_grid.scss */
-  [class*="column"] + [class*="column"]:last-child {
-    float: right;
-  }
 
   /* line 148, ../../../../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/zurb-foundation-4.3.2/scss/foundation/components/_grid.scss */
   [class*="column"] + [class*="column"].end {
@@ -3611,6 +3608,7 @@ table ul {
 
 /* line 287, ../../sass/_export.scss */
 .active #updatePanelDiagram {
+    position: fixed;
   width: 100%;
 }
 
@@ -4030,6 +4028,7 @@ body.off-canvas {
 @media screen and (max-width: 1024px) {
   /* line 604, ../../sass/_export.scss */
   .active #updatePanelDiagram {
+    position: fixed;
     width: 50%;
   }
 
@@ -4242,9 +4241,6 @@ body.off-canvas {
 /* Diagram overview
    ========================================================================== */
 /* line 775, ../../sass/_export.scss */
-.biz-ex-table-view [class*="column"] + [class*="column"]:last-child {
-  float: left;
-}
 
 /* line 779, ../../sass/_export.scss */
 .biz-ex-box-process {
